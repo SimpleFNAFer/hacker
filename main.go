@@ -35,7 +35,7 @@ func main() {
 		}
 
 		fmt.Printf(
-			"Your attack plan is: %s:%s/ by %s00 requests. Correct? (y/n):",
+			"Your attack plan is: %s:%s/ by %s00 requests. Correct? (y/n):\n",
 			ip,
 			port,
 			hundreds)
@@ -44,17 +44,17 @@ func main() {
 
 	hundredsNum, err := strconv.Atoi(hundreds)
 	if err != nil {
-		fmt.Printf("%s is not a number", hundreds)
+		fmt.Printf("%s is not a number\n", hundreds)
 		return
 	}
 
 	if err = CheckIP(ip); err != nil {
-		fmt.Printf("incorrect ip address: %s", err.Error())
+		fmt.Printf("incorrect ip address: %s\n", err.Error())
 		return
 	}
 
-	if err = CheckPort(ip); err != nil {
-		fmt.Printf("incorrect port: %s", err.Error())
+	if err = CheckPort(port); err != nil {
+		fmt.Printf("incorrect port: %s\n", err.Error())
 		return
 	}
 
